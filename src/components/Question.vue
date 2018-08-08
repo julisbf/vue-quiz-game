@@ -1,23 +1,23 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title text-center">{{ question }}</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">{{ question }}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-12 col-sm-6 text-center">
+                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[0].correct)">{{ btnData[0].answer }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 text-center">
+                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[1].correct)">{{ btnData[1].answer }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 text-center">
+                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[2].correct)">{{ btnData[2].answer }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-6 text-center">
+                <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[3].correct)">{{ btnData[3].answer }}</button>
+            </div>
+        </div>
     </div>
-    <div class="panel-body">
-      <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[0].correct)">{{ btnData[0].answer }}</button>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[1].correct)">{{ btnData[1].answer }}</button>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[2].correct)">{{ btnData[2].answer }}</button>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg" style="margin: 10px" @click="onAnswer(btnData[3].correct)">{{ btnData[3].answer }}</button>
-      </div>
-    </div>
-  </div>
 </template>
 <style>
 </style>
@@ -69,8 +69,6 @@
             },
             generateRandomNumber(min, max, except) {
                 const rndNumber = Math.round(Math.random() * (max - min)) + min;
-                // eslint-disable-next-line
-                console.log(min, max, rndNumber);
                 if (rndNumber == except) {
                     return this.generateRandomNumber(min, max, except);
                 }
